@@ -2,7 +2,6 @@ body {
     color: #f5f5f5;
     background-color: #151515;
     zoom: 80%;
-    /* Added to set initial zoom to 80% */
 }
 
 .header,
@@ -158,13 +157,12 @@ body {
 
 .name-card-front {
     width: 13.5cm;
-    height: 7.5cm;
+    height: 8.25cm;
     background-color: #fff;
     color: #000;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 0px 15px;
-    padding-top: 1px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     box-sizing: border-box;
@@ -195,6 +193,28 @@ body {
     display: flex;
     align-items: center;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .name-card-front {
+        width: 12.75cm;
+        height: 7.5cm;
+        padding: 0px 10px;
+        font-size: 0.7em;
+    }
+
+    .name-card-back {
+        width: 11.75cm;
+        height: 7.2cm;
+    }
+
+    .name-card-front td {
+        padding: 0px 5px;
+    }
+}
+
+
 
 .design-button {
     display: flex;
@@ -273,3 +293,4 @@ body {
     width: 300px;
     height: auto;
 }
+
