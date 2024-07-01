@@ -18,7 +18,7 @@ body {
 
 .container {
     padding: 5%;
-    height: 200vh;
+    height: 220vh;
     display: flex;
     flex-direction: column;
     border-radius: 50px;
@@ -294,3 +294,29 @@ body {
     height: auto;
 }
 
+.download-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.download-button {
+    width: 50%;
+    height: 70px;
+    margin: 1% 0;
+    padding: 5px;
+    font-size: 1.2em;
+    color: #0bb741;
+    background-color: #fff;
+    border: 1px solid #0bb741;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #0bb741;
+    color: #f5f5f5;
+    border-color: #f5f5f5;
+    transform: translateY(-3px);
+}

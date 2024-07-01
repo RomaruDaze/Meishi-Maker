@@ -30,9 +30,9 @@ function createNameCard() {
 
     const nameCardContainer = document.getElementById("nameCardContainer");
     nameCardContainer.innerHTML = `
-    <table class="name-card-front">
+    <table class="name-card-front" id="nameCardFront">
         <tr>
-            <td colspan="2">${occupation}<br></td>
+            <td colspan="2"><br>${occupation}<br></td>
         </tr>
         <tr>
             <td colspan="2" style="font-size: 1.5em;"><br>
@@ -49,7 +49,6 @@ function createNameCard() {
                 ${instagram ? `<strong><i class="fab fa-instagram"></i> </strong>${instagram}<br>` : ''}
             </td>
             <td>
-            <!-- <img src="./assets/logo.png" alt="Logo" style="width:200px;height:auto;"> -->
             <div class="shape">
                 <div class="shape-1"></div>
                 <div class="shape-2"></div>
@@ -60,14 +59,13 @@ function createNameCard() {
     </table>
     <br>
     <br>
-    <div class="name-card-back">
+    <div class="name-card-back" id="nameCardBack">
         <div class="name-card-back-row">
-            <img src="./assets/logo.png" alt="Logo" style="width:400px;height:auto;">
+            <img src="./assets/logo.png" alt="Logo" style="width:300px;height:auto;">
         </div>
     </div>
     `;
 
-    // Scroll to the output section
     document.querySelector('.output').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -114,4 +112,24 @@ function changeDesign(design) {
     cardBack.style.background = gradient;
     cardBack.style.color = textColor;
     shapes.forEach(shape => shape.style.backgroundColor = textColor);
+}
+
+function downloadPDF() {
+    const scale = 2;
+    const nameCardFront = document.getElementById('nameCardFront');
+    const nameCardBack = document.getElementById('nameCardBack');
+
+    html2canvas(nameCardFront, { scale }).then(canvas => {
+        const imgData = canvas.toDataURL('image/jpeg');
+        const pdf = new jsPDF('landscape', 'mm', [180, 110]);
+        pdf.addImage(imgData, 'JPEG', 0, 0, 180, 110);
+        pdf.save('name_card_front.pdf');
+    });
+
+    html2canvas(nameCardBack, { scale }).then(canvas => {
+        const imgData = canvas.toDataURL('image/jpeg');
+        const pdf = new jsPDF('landscape', 'mm', [180, 110]);
+        pdf.addImage(imgData, 'JPEG', 0, 0, 180, 110);
+        pdf.save('name_card_back.pdf');
+    });
 }
