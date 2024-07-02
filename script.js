@@ -126,7 +126,7 @@ function downloadImage() {
             img.onload = () => {
                 loadedImagesCount++;
                 if (loadedImagesCount === images.length) {
-                    setTimeout(captureAndDownload, 500); // Delay to ensure rendering
+                    setTimeout(captureAndDownload, 500); 
                 }
             };
         }
