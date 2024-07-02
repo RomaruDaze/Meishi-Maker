@@ -161,11 +161,9 @@ body {
     background-color: #fff;
     color: #000;
     border: 1px solid #ddd;
-    border-radius: 10px;
     padding: 0px 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-    box-sizing: border-box;
     font-size: 0.8em;
 }
 
@@ -174,25 +172,19 @@ body {
 }
 
 .name-card-back {
-    width: 12.75cm;
-    height: 7.5cm;
+    width: 12.7cm;
+    height: 8.03cm;
     background: linear-gradient(110deg, #fff 75%, #ddd 25%);
     color: #000;
     border: 1px solid #ddd;
-    border-radius: 10px;
     padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8em;
 }
 
-.name-card-back-row {
-    display: flex;
-    align-items: center;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
